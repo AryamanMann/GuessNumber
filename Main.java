@@ -28,9 +28,16 @@ public class Main {
            return "Correct!\nTotal Guesses: " + count;
        }
        else if (userAnswer > computerNumber) {
-           return "Your guess is too high, try again.\nTry Number: " + count;
+            if (userAnswer <= computerNumber + 10 ) {
+                return "Your guess is a little high, try a slightly lower number.\nTry Number: " + count;
+            }
+            return "Your guess is too high, try again.\nTry Number: " + count;
        }
+       
        else if (userAnswer < computerNumber) {
+        if (userAnswer >= computerNumber - 10 ) {
+           return "Your guess is a little low, try a slightly higher number.\nTry Number: " + count;
+        }
            return "Your guess is too low, try again.\nTry Number: " + count;
        }
        else {
